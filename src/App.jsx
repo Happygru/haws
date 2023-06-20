@@ -1,9 +1,87 @@
 import Header from "./Layout/Header";
 import WedoItem from "./Components/WedoItem";
 import ScrollToTop from "react-scroll-to-top";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "./App.css";
+import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
+
+const NextArrow = ({ className, style, onClick }) => {
+  return (
+    <div
+      className={className}
+      onClick={onClick}
+      style={{
+        ...style,
+        color: "var(--site-main-color1)",
+        right: "90px",
+        width: "max-content",
+        height: "max-content",
+        zIndex: 1000,
+      }}
+    >
+      <HiChevronRight className="w-10 h-10" />
+    </div>
+  );
+};
+
+const PrevArrow = ({ className, style, onClick }) => {
+  return (
+    <div
+      className={className}
+      onClick={onClick}
+      style={{
+        ...style,
+        color: "var(--site-main-color1)",
+        width: "max-content",
+        height: "max-content",
+        zIndex: 1000,
+        left: "50px",
+      }}
+    >
+      <HiChevronLeft className="w-10 h-10" />
+    </div>
+  );
+};
 
 function App() {
+  var settings = {
+    dots: true,
+    speed: 500,
+    dotsClass: "slick-dots template-dots",
+    slidesToShow: 4,
+    infinite: false,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1440,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 986,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 520,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
+
   return (
     <>
       <Header />
@@ -283,96 +361,98 @@ function App() {
         <div className="w-full">
           <img src="map.svg" className="m-auto" alt="" />
         </div>
-        <div className="w-full pl-[100px] overflow-auto">
-          <div className="flex justify-between w-full min-w-[800px] mt-12">
-            <div className="border-t w-1/4 border-[--site-main-color1] mt-12 pt-12 relative">
-              <div className="absolute top-[-67px] left-[-10px]">
-                <p className="text-[--site-main-color1] text-2xl font-default mb-4 pl-2">
-                  2023
-                </p>
-                <div className="border border-[--site-main-color1] p-2 rounded-full w-max">
-                  <div className="bg-[--site-main-color1] rounded-full w-[20px] h-[20px]"></div>
+        <div className="w-full pl-[100px]">
+          <div className="flex justify-between w-full mt-12 overflow-hidden">
+            <Slider {...settings} className="w-full mt-[10px] ml-[10px]">
+              <div className="border-t w-1/4 border-[--site-main-color1] mt-12 pt-12 relative">
+                <div className="absolute top-[-67px] left-[-10px]">
+                  <p className="text-[--site-main-color1] text-2xl font-default mb-4 pl-2">
+                    2023
+                  </p>
+                  <div className="border border-[--site-main-color1] p-2 rounded-full w-max">
+                    <div className="bg-[--site-main-color1] rounded-full w-[20px] h-[20px]"></div>
+                  </div>
+                </div>
+                <div className="w-3/4 text-[--site-main-color2] text-[15px]">
+                  <p>
+                    2023 marks the beggining of Haws in the heart of Lisbon, Rua
+                    Maria.
+                  </p>
+                  {/* <p>
+                    Second opening is under works at Rua dos Fanqueiros in Lisbon.
+                  </p> */}
                 </div>
               </div>
-              <div className="w-3/4 text-[--site-main-color2] text-[15px]">
-                <p>
-                  2023 marks the beggining of Haws in the heart of Lisbon, Rua
-                  Maria.
-                </p>
-                {/* <p>
-                  Second opening is under works at Rua dos Fanqueiros in Lisbon.
-                </p> */}
-              </div>
-            </div>
 
-            <div className="border-t w-1/4 border-[--site-main-color1] mt-12 pt-12 relative">
-              <div className="absolute top-[-67px] left-[-10px]">
-                <p className="text-[--site-main-color3] text-2xl font-default mb-4 pl-2">
-                  2024
-                </p>
-                <div className="border border-[--site-main-color3] p-2 rounded-full w-max">
-                  <div className="bg-[--site-main-color3] rounded-full w-[20px] h-[20px]"></div>
+              <div className="border-t w-1/4 border-[--site-main-color1] mt-12 pt-12 relative">
+                <div className="absolute top-[-67px] left-[-10px]">
+                  <p className="text-[--site-main-color3] text-2xl font-default mb-4 pl-2">
+                    2024
+                  </p>
+                  <div className="border border-[--site-main-color3] p-2 rounded-full w-max">
+                    <div className="bg-[--site-main-color3] rounded-full w-[20px] h-[20px]"></div>
+                  </div>
+                </div>
+                <div className="w-3/4 text-[--site-main-color2] text-[15px]">
+                  <p>
+                    News locations are opening in Barcelona, Marrakech and
+                    Budapest.
+                  </p>
                 </div>
               </div>
-              <div className="w-3/4 text-[--site-main-color2] text-[15px]">
-                <p>
-                  News locations are opening in Barcelona, Marrakech and
-                  Budapest.
-                </p>
-              </div>
-            </div>
 
-            <div className="border-t w-1/4 border-[--site-main-color1] mt-12 pt-12 relative">
-              <div className="absolute top-[-67px] left-[-10px]">
-                <p className="text-[--site-main-color2] text-2xl font-default mb-4 pl-2">
-                  2025
-                </p>
-                <div className="border border-[--site-main-color2] p-2 rounded-full w-max">
-                  <div className="bg-[--site-main-color2] rounded-full w-[20px] h-[20px]"></div>
+              <div className="border-t w-1/4 border-[--site-main-color1] mt-12 pt-12 relative">
+                <div className="absolute top-[-67px] left-[-10px]">
+                  <p className="text-[--site-main-color2] text-2xl font-default mb-4 pl-2">
+                    2025
+                  </p>
+                  <div className="border border-[--site-main-color2] p-2 rounded-full w-max">
+                    <div className="bg-[--site-main-color2] rounded-full w-[20px] h-[20px]"></div>
+                  </div>
+                </div>
+                <div className="w-3/4 text-[--site-main-color2] text-[15px]">
+                  <p>
+                    We are moving to Saudi Arabia with two projects Riyadh and
+                    Jeddah.
+                  </p>
                 </div>
               </div>
-              <div className="w-3/4 text-[--site-main-color2] text-[15px]">
-                <p>
-                  We are moving to Saudi Arabia with two projects Riyadh and
-                  Jeddah.
-                </p>
-              </div>
-            </div>
 
-            <div className="border-t w-1/4 border-[--site-main-color1] mt-12 pt-12 relative">
-              <div className="absolute top-[-67px] left-[-10px]">
-                <p className="text-[#515151] text-2xl font-default mb-4 pl-2">
-                  2026
-                </p>
-                <div className="border border-[#515151] p-2 rounded-full w-max">
-                  <div className="bg-[#515151] rounded-full w-[20px] h-[20px]"></div>
+              <div className="border-t w-1/4 border-[--site-main-color1] mt-12 pt-12 relative">
+                <div className="absolute top-[-67px] left-[-10px]">
+                  <p className="text-[#515151] text-2xl font-default mb-4 pl-2">
+                    2026
+                  </p>
+                  <div className="border border-[#515151] p-2 rounded-full w-max">
+                    <div className="bg-[#515151] rounded-full w-[20px] h-[20px]"></div>
+                  </div>
+                </div>
+                <div className="w-3/4 text-[--site-main-color2] text-[15px]">
+                  <p>
+                    We will continue our expansion, aiming at 10+ locations by
+                    the end of 2026.
+                  </p>
                 </div>
               </div>
-              <div className="w-3/4 text-[--site-main-color2] text-[15px]">
-                <p>
-                  We will continue our expansion, aiming at 10+ locations by the
-                  end of 2026.
-                </p>
-              </div>
-            </div>
 
-            <div className="border-t w-1/4 border-[--site-main-color1] mt-12 pt-12 relative">
-              <div className="absolute top-[-67px] left-[-10px]">
-                <p className="text-[#F29678] text-2xl font-default mb-4 pl-2">
-                  2026 Onwards
-                </p>
-                <div className="border border-[#F29678] p-2 rounded-full w-max">
-                  <div className="bg-[#F29678] rounded-full w-[20px] h-[20px]"></div>
+              <div className="border-t w-1/4 border-[--site-main-color1] mt-12 pt-12 relative">
+                <div className="absolute top-[-67px] left-[-10px]">
+                  <p className="text-[#F29678] text-2xl font-default mb-4 pl-2">
+                    2026 Onwards
+                  </p>
+                  <div className="border border-[#F29678] p-2 rounded-full w-max">
+                    <div className="bg-[#F29678] rounded-full w-[20px] h-[20px]"></div>
+                  </div>
+                </div>
+                <div className="w-3/4 text-[--site-main-color2] text-[15px]">
+                  <p>
+                    Cities of our interest include: San Sebastian, Valencia,
+                    Malaga, Rome, Florence, Milano, London, Prague, Berlin,
+                    Vienna, Paris.
+                  </p>
                 </div>
               </div>
-              <div className="w-3/4 text-[--site-main-color2] text-[15px]">
-                <p>
-                  Cities of our interest include: San Sebastian, Valencia,
-                  Malaga, Rome, Florence, Milano, London, Prague, Berlin,
-                  Vienna, Paris
-                </p>
-              </div>
-            </div>
+            </Slider>
           </div>
         </div>
       </div>
@@ -417,7 +497,7 @@ function App() {
       </div>
 
       <div className="w-full">
-        <img src="footer_nav.svg" className="w-full" alt="" />
+        <img src="footer_nav.png" className="w-full" alt="" />
       </div>
 
       <div className="w-full bg-[--site-main-color2] px-[135px] py-[40px] flex items-center justify-between">

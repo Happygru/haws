@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.slick-list {
+  overflow: visible;
+}
+
+.slick-arrow:before {
+  display: none;
+}
