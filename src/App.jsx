@@ -7,44 +7,6 @@ import "slick-carousel/slick/slick-theme.css";
 import "./App.css";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
-const NextArrow = ({ className, style, onClick }) => {
-  return (
-    <div
-      className={className}
-      onClick={onClick}
-      style={{
-        ...style,
-        color: "var(--site-main-color1)",
-        right: "90px",
-        width: "max-content",
-        height: "max-content",
-        zIndex: 1000,
-      }}
-    >
-      
-    </div>
-  );
-};
-
-const PrevArrow = ({ className, style, onClick }) => {
-  return (
-    <div
-      className={className}
-      onClick={onClick}
-      style={{
-        ...style,
-        color: "var(--site-main-color1)",
-        width: "max-content",
-        height: "max-content",
-        zIndex: 1000,
-        left: "50px",
-      }}
-    >
-      
-    </div>
-  );
-};
-
 function App() {
   var settings = {
     dots: true,
@@ -52,8 +14,6 @@ function App() {
     dotsClass: "slick-dots template-dots",
     slidesToShow: 4,
     infinite: false,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
     responsive: [
       {
         breakpoint: 1440,
