@@ -98,9 +98,7 @@ function App() {
         <div className="w-full h-1/2 md:h-1/3">
           <div className="container relative w-full h-full max-w-screen-xl px-8 m-auto">
             <p className="text-[25px] text-white font-default pt-8">
-              Reimagining the hospitality space dolor sit amet consectetur
-              adipiscing elit
-              <br /> eleifend, viverra nullam laoreet eros primis
+              Reimagining the hospitality space
             </p>
           </div>
         </div>
