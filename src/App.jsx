@@ -21,7 +21,7 @@ const NextArrow = ({ className, style, onClick }) => {
         zIndex: 1000,
       }}
     >
-      <HiChevronRight className="w-10 h-10" />
+      
     </div>
   );
 };
@@ -40,7 +40,7 @@ const PrevArrow = ({ className, style, onClick }) => {
         left: "50px",
       }}
     >
-      <HiChevronLeft className="w-10 h-10" />
+      
     </div>
   );
 };
@@ -360,7 +360,7 @@ function App() {
           <img src="map.svg" className="m-auto" alt="" />
         </div>
         <div className="w-full pl-[100px]">
-          <div className="flex justify-between w-full mt-12 overflow-hidden">
+          <div className="flex justify-between w-full mt-12 overflow-hidden cursor-grab">
             <Slider {...settings} className="w-full mt-[10px] ml-[10px]">
               <div className="border-t w-1/4 border-[--site-main-color1] mt-12 pt-12 relative">
                 <div className="absolute top-[-67px] left-[-10px]">
