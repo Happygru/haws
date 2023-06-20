@@ -438,7 +438,7 @@ function App() {
           </span>
         </div>
       </div>
-      <ScrollToTop smooth="true" />
+      <ScrollToTop smooth="true" className="flex items-center justify-center" />
       <div className="w-full h-[40px] bg-[#164676]"></div>
     </>
   );
