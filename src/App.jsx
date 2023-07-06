@@ -68,7 +68,7 @@ function App() {
         className="flex flex-col w-full gap-8 py-[60px] bg-white"
         id="section1"
       >
-        <div className="w-full text-center text-[--site-main-color1] text-[19px] font-default">
+        <div className="w-full text-center text-[--site-main-color1] text-[19px] font-default px-[10px]">
           <p>We are open minded and creative.</p>
           <p>
             We turn old houses into into hotels and residences, reimagine old
@@ -78,7 +78,7 @@ function App() {
             ones.
           </p>
         </div>
-        <div className="text-[--site-main-color2] text-[15px] font-default m-auto flex flex-col gap-4">
+        <div className="text-[--site-main-color2] text-[15px] font-default m-auto flex flex-col gap-4 px-[10px]">
           <p className="m-auto text-center max-w-[420px]">
             Our hotels are inspired by the streets and scenes that surround
             them, and each one is an authentic reflection of its neighbourhood.
@@ -105,7 +105,7 @@ function App() {
         className="bg-[url('assets/hero_pattern.svg')] w-full pt-[60px]"
         id="section2"
       >
-        <div className="flex flex-col items-center justify-center w-full max-w-3xl gap-8 m-auto font-default">
+        <div className="flex flex-col items-center justify-center w-full max-w-3xl gap-8 m-auto font-default px-[10px]">
           <p className="uppercase text-[--site-main-color1] font-black text-[35px]">
             what we do?
           </p>
@@ -415,7 +415,7 @@ function App() {
       </div>
 
       {/* haws development */}
-      <div className="w-full py-[50px] pb-[200px]">
+      <div className="w-full py-[50px] pb-[200px] px-[10px]">
         <p className="text-[--site-main-color1] font-default font-bold uppercase pb-[30px] text-[35px] text-center">
           haws development
         </p>
