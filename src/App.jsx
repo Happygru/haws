@@ -109,7 +109,7 @@ function App() {
           <p className="uppercase text-[--site-main-color1] font-black text-[35px]">
             what we do?
           </p>
-          <p className="text-[--site-main-color2] font-semibold text-[27px]">
+          <p className="text-[--site-main-color2] font-semibold text-[27px] text-center">
             More than one just bed for the night
           </p>
           <div className="flex flex-col items-center justify-center gap-4 text-[--site-main-color2] text-[19px]">
